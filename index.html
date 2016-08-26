@@ -1,0 +1,73 @@
+<script src="greenGame.1.0.js"></script>
+
+<style>
+body{
+  background: url("http://images.freepicturesweb.com/img1/05/02/37.jpg") center center no-repeat;
+  background-size: cover;
+}
+  #wrapper {
+    position: absolute;
+    top: 15vh;
+    left: 60vh;
+    width: 70vh;
+    height: 70vh;
+    border: 2px solid black;
+    background: url("http://previews.123rf.com/images/yuliaglam/yuliaglam1305/yuliaglam130500037/19749758-gray-background-with-oriental-decorations-Stock-Vector-pattern.jpg") center center no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div id="wrapper">
+
+</div>
+
+
+<script>
+window.onload = function() {
+  mainScene = new Scene({
+    debug: false, //optional
+    wrapper: "wrapper" //Must require
+  });
+
+  obj_01 = mainScene.addObject({
+    state: "start",
+    rotate: true,
+    position: new Position({
+      preset: 'centercenter'
+    }),
+    texture: new Texture({
+      sizeY: 20,
+      sizeX: 20,
+      image: 'https://cdn2.iconfinder.com/data/icons/pix-glyph-set/50/520518-registration_mark_3-512.png'
+    })
+  });
+
+  obj_02 = mainScene.addObject({
+    state: "start",
+    draggable: true,
+    target : obj_01,
+    position: new Position({
+      preset: 'topleft'
+    }),
+    texture: new Texture({
+      sizeY: 10,
+      sizeX: 10,
+      image: 'http://cdn.onlinewebfonts.com/svg/download_23048.png'
+    })
+  });
+
+  obj_03 = mainScene.addObject({
+    state: "start",
+    draggable: true,
+    target : obj_01,
+    position: new Position({
+      preset: 'topright'
+    }),
+    texture: new Texture({
+      sizeY: 10,
+      sizeX: 10,
+      image: 'http://cdn.onlinewebfonts.com/svg/download_23048.png'
+    })
+  });
+};
+</script>
